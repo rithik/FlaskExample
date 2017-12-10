@@ -15,10 +15,10 @@ Add necessary code to your project. All CSS, JS and image files should be added 
 
 ## Things to remember
 
-### You should not share your `secret.py` file with anyone.
-### Do not change the `manage.py` file.
-### You should not commit your database file to GitHub.
-### The `Procfile` is necessary if you are deploying to Heroku.
-### Change the `runtime.txt` file to the appropriate version of Python.
-### You should not need to change the `database.py` file.
-### If you need additional libraries not included in the `requirements.txt` file, you may use the command `pip install <LIBRARY NAME>`. Once this is done, use the command `pip freeze > requirement.txt` to overwrite the existing `requirements.txt` file.
+#### You should not share your `secret.py` file with anyone.
+#### Do not change the `manage.py` file.
+#### You should not commit your database file to GitHub.
+#### The `Procfile` is necessary if you are deploying to Heroku.
+#### Change the `runtime.txt` file to the appropriate version of Python.
+#### You should not need to change the `database.py` file.
+#### If you need additional libraries not included in the `requirements.txt` file, you may use the command `pip install <LIBRARY NAME>`. Once this is done, use the command `pip freeze > requirement.txt` to overwrite the existing `requirements.txt` file.
