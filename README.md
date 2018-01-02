@@ -32,8 +32,12 @@ Run the Flask Server by typing `python app.py` or `python3 app.py`.
 ## Things to remember
 
 You should not share your `secret.py` file with anyone.
+
 Do not change the `manage.py` file.
+
 You should not commit your database file to GitHub.
+
 The `Procfile` is necessary if you are deploying to Heroku.
+
 Do not change the `database.py` file.
 
