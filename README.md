@@ -2,23 +2,38 @@
 
 ## Step 1
 
-Fork this repository on GitHub. Next, clone your forked repository to your local file system.
+Fork this repository on GitHub. 
 
 ## Step 2
 
-Create a `secret.py` file from the `secret.py.example` file.
+Clone your forked repository to your local file system.
 
 ## Step 3
 
-Add necessary code to your project. All CSS, JS and image files should be added to `Static` Folder. All HTML files should be added to the `Templates` folder. All views should be added to the `app.py` file. All models should be added to the `models.py` file.
+Update runtime.txt to the version of python you are using. You can find out the version by using `python -V` or `python3 -V` (for Python3). Your runtime.txt file should look like `python-<VERSION NUMBER>`.
+
+## Step 4
+
+Rename the `secret.py.example` file to the `secret.py`. Use `cp secret.py.example secret.py` or `mv secret.py.example secret.py`.
+
+## Step 5
+
+Add all required python packages and libraries to the `requirements.txt` file. Use `pip freeze > requirements.txt`.
+
+## Step 6
+
+Add necessary code to your project. All CSS files should be added to the `static/css` folder. All JavaScript file should be added to the `static/js` folder. All images should be added to the `static/img` folder. All HTML files should be added to the `templates` folder. All views should be added to the `app.py` file. All models should be added to the `models.py` file.
+
+## Step 7
+
+Run the Flask Server by typing `python app.py` or `python3 app.py`.
 
 
 ## Things to remember
 
-#### You should not share your `secret.py` file with anyone.
-#### Do not change the `manage.py` file.
-#### You should not commit your database file to GitHub.
-#### The `Procfile` is necessary if you are deploying to Heroku.
-#### Change the `runtime.txt` file to the appropriate version of Python.
-#### You should not need to change the `database.py` file.
-#### If you need additional libraries not included in the `requirements.txt` file, you may use the command `pip install <LIBRARY NAME>`. Once this is done, use the command `pip freeze > requirement.txt` to overwrite the existing `requirements.txt` file.
+You should not share your `secret.py` file with anyone.
+Do not change the `manage.py` file.
+You should not commit your database file to GitHub.
+The `Procfile` is necessary if you are deploying to Heroku.
+Do not change the `database.py` file.
+
