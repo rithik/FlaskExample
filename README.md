@@ -22,7 +22,17 @@ Add all required python packages and libraries to the `requirements.txt` file. U
 
 ## Step 6
 
-Add necessary code to your project. All CSS files should be added to the `static/css` folder. All JavaScript file should be added to the `static/js` folder. All images should be added to the `static/img` folder. All HTML files should be added to the `templates` folder. All views should be added to the `app.py` file. All models should be added to the `models.py` file.
+Add necessary code to your project. 
+
+All CSS files should be added to the `static/css` folder. All JavaScript file should be added to the `static/js` folder. All images should be added to the `static/img` folder. 
+
+As you add code to the `static/css`, `static/js` and `static/img` folders, you can remove the `.gitignore` files in these folders.
+
+All HTML files should be added to the `templates` folder. 
+
+All views should be added to the `app.py` file. 
+
+All models should be added to the `models.py` file. 
 
 ## Step 7
 
