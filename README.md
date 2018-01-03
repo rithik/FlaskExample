@@ -22,6 +22,10 @@ Add all required python packages and libraries to the `requirements.txt` file. U
 
 ## Step 6
 
+Create the database by using `python dbSetup.py` or `python3 dbSetup.py`.
+
+## Step 7
+
 Add necessary code to your project. 
 
 All CSS files should be added to the `static/css` folder. All JavaScript file should be added to the `static/js` folder. All images should be added to the `static/img` folder. 
@@ -34,7 +38,7 @@ All views should be added to the `app.py` file.
 
 All models should be added to the `models.py` file. 
 
-## Step 7
+## Step 8
 
 Run the Flask Server by typing `python app.py` or `python3 app.py`.
 
