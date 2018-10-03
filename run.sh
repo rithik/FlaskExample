@@ -16,7 +16,19 @@ fi
 if [ ! -f database.db ]; then
     echo "A database file was not found."
     echo "Auto-generating a database file."
-    python3 database.py
+    python3 dbSetup.py
 fi
 
-python3 app.py
+export FLASK_APP=app
+
+if [[ $1 == dev ]]; then
+    echo "Using Development environment"
+    export FLASK_ENV=development
+    flask run
+elif [[ $1 == prod ]]; then
+    echo "Using production environment"
+    gunicorn -w 4 -b 127.0.0.1:5000 app:app
+else
+    echo "!!! Using production environment since argument was not provided. To use dev setup, use './run.sh dev'"
+    gunicorn -w 4 -b 127.0.0.1:5000 app:app
+fi

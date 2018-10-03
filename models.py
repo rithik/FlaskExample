@@ -24,4 +24,3 @@ class User(Base):
 
     def __repr__(self):
         return '<email {}>'.format(self.email)
-

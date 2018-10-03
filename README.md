@@ -2,7 +2,7 @@
 
 ## Step 1
 
-Fork this repository on GitHub. 
+Fork this repository on GitHub.
 
 ## Step 2
 
@@ -14,7 +14,7 @@ Update runtime.txt to the version of python you are using. You can find out the 
 
 ## Step 4
 
-Rename the `secret.py.example` file to the `secret.py`. Use `cp secret.py.example secret.py` or `mv secret.py.example secret.py`.
+Rename the `secret.py.example` file to the `secret.py`. Use `cp secret.py.example secret.py` or `mv secret.py.example secret.py`. Add in appropriate variables. Make sure to change the `SECRET_KEY` field.  
 
 ## Step 5
 
@@ -26,22 +26,21 @@ Create the database by using `python dbSetup.py` or `python3 dbSetup.py`.
 
 ## Step 7
 
-Add necessary code to your project. 
+Add necessary code to your project.
 
-All CSS files should be added to the `static/css` folder. All JavaScript file should be added to the `static/js` folder. All images should be added to the `static/img` folder. 
+All CSS files should be added to the `static/css` folder. All JavaScript file should be added to the `static/js` folder. All images should be added to the `static/img` folder.
 
 As you add code to the `static/css`, `static/js` and `static/img` folders, you can remove the `.gitignore` files in these folders.
 
-All HTML files should be added to the `templates` folder. 
+All HTML files should be added to the `templates` folder.
 
-All views should be added to the `app.py` file. 
+All views should be added to the `app.py` file.
 
-All models should be added to the `models.py` file. 
+All models should be added to the `models.py` file.
 
 ## Step 8
 
-Run the Flask Server by typing `python app.py` or `python3 app.py`.
-
+Run the development Flask Server by typing `./run.sh dev`. Run the production Flask server by typing `./run.sh prod`. By default, the script will use `gunicorn` to start the server with four workers and will be hosted on port 5000.
 
 ## Things to remember
 
@@ -54,4 +53,3 @@ You should not commit your database file to GitHub.
 The `Procfile` is necessary if you are deploying to Heroku.
 
 Do not change the `database.py` file.
-
