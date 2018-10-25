@@ -40,7 +40,7 @@ All models should be added to the `models.py` file.
 
 ## Step 8
 
-Run the development Flask Server by typing `./run.sh dev`. Run the production Flask server by typing `./run.sh prod`. By default, the script will use `gunicorn` to start the server with four workers and will be hosted on port 5000.
+Run the development Flask Server by typing `./run.sh dev`. A server will start running and will be up at http://localhost:5000/. Run the production Flask server by typing `./run.sh prod`. By default, the script will use `gunicorn` to start the server with four workers and will be hosted on port 5000.
 
 ## Things to remember
 
