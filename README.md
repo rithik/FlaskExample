@@ -22,7 +22,7 @@ Add all required python packages and libraries to the `requirements.txt` file. U
 
 ## Step 6
 
-Create the database by using `python dbSetup.py` or `python3 dbSetup.py`.
+Create the database. First, install PostgreSQL by going to [https://www.postgresql.org/download/](https://www.postgresql.org/download/). Once PostgreSQL is installed, create a new database. Change the DB_URL value in your `secret.py` file to use the following format: `postgresql://localhost/DATABASE_NAME`. When you are using a cloud based database (such as Google Cloud or AWS), use the following connection string: `postgresql://USERNAME:PASSWORD@IP_ADDRESS/DATABASE_NAME`.
 
 ## Step 7
 

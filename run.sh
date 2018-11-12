@@ -13,12 +13,6 @@ if [ ! -f secret.py ]; then
     exit 1
 fi
 
-if [ ! -f database.db ]; then
-    echo "A database file was not found."
-    echo "Auto-generating a database file."
-    python3 dbSetup.py
-fi
-
 export FLASK_APP=app
 
 if [[ $1 == dev ]]; then
