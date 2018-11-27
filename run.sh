@@ -20,9 +20,9 @@ if [[ $1 == dev ]]; then
     export FLASK_ENV=development
     flask run
 elif [[ $1 == prod ]]; then
-    echo "Using production environment"
-    gunicorn -w 4 -b 127.0.0.1:5000 app:app
+    echo "Using production environment with nohup and gunicorn"
+    nohup gunicorn -w 4 -b 127.0.0.1:5000 app:app &
 else
-    echo "!!! Using production environment since argument was not provided. To use dev setup, use './run.sh dev'"
+    echo "!!! Using sudo production environment since argument was not provided. To use dev setup, use './run.sh dev'"
     gunicorn -w 4 -b 127.0.0.1:5000 app:app
 fi
