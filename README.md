@@ -22,7 +22,15 @@ Add all required python packages and libraries to the `requirements.txt` file. U
 
 ## Step 6
 
-Create the database. First, install PostgreSQL by going to [https://www.postgresql.org/download/](https://www.postgresql.org/download/). Once PostgreSQL is installed, create a new database. Change the DB_URL value in your `secret.py` file to use the following format: `postgresql://localhost/DATABASE_NAME`. When you are using a cloud based database (such as Google Cloud or AWS), use the following connection string: `postgresql://USERNAME:PASSWORD@IP_ADDRESS/DATABASE_NAME`.
+Create the database. 
+
+First, install PostgreSQL by going to [https://www.postgresql.org/download/](https://www.postgresql.org/download/). 
+
+Once PostgreSQL is installed, create a new database. 
+
+Change the DB_URL value in your `secret.py` file to use the following format: `postgresql://localhost/DATABASE_NAME`. 
+
+When you are using a cloud based database (such as Google Cloud or AWS), use the following connection string: `postgresql://USERNAME:PASSWORD@IP_ADDRESS/DATABASE_NAME`.
 
 ## Step 7
 
@@ -40,7 +48,9 @@ All models should be added to the `models.py` file.
 
 ## Step 8
 
-Run the development Flask Server by typing `./run.sh dev`. A server will start running and will be up at http://localhost:5000/. Run the production Flask server by typing `./run.sh prod`. By default, the script will use `gunicorn` to start the server with four workers and will be hosted on port 5000.
+Run the development Flask Server by typing `./run.sh dev`. A server will start running and will be up at http://localhost:5000/. 
+
+Run the production Flask server by typing `./run.sh prod`. By default, the script will use `gunicorn` to start the server with four workers and will be hosted on port 5000.
 
 ## Things to remember
 
