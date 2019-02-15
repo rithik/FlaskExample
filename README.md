@@ -63,3 +63,68 @@ You should not commit your database file to GitHub.
 The `Procfile` is necessary if you are deploying to Heroku.
 
 Do not change the `database.py` file.
+
+## Database Setup
+
+In order to get the database fully functional, run `./manage.py db init` to get the database running.
+
+Every time you modify your models, run the following two commands in the following order:
+```
+./manage.py db migrate
+./manage.py db upgrade
+
+```
+
+## Shell Access
+
+In order to get access to the shell, run `./manage.py shell`. This will open a shell without any imports.
+
+In order to modify database entries (rows), once the shell opens run the following lines:
+```
+from app import db
+from models import _
+```
+where the _ should be replaced by all of the models you wish to import.
+
+## Deploying to Heroku
+
+### Step 1
+
+Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+
+### Step 2
+
+Run the following command to login to Heroku: `heroku login`.
+
+### Step 3
+
+Setup the git repo by running `git init`.
+
+### Step 3
+
+Run the following command to create a new app: `heroku create APP_NAME`.
+
+### Step 4
+
+Go to the Heroku Dashboard and click "Configure Add Ons". Then click "Find More Add-ons". Search for "Heroku Postgres" and click on it. Then click install. This will configure the database to the Heroku app.
+
+### Step 5
+
+Go to the settings tab and click "Reveal Config Vars". Add all of the variables that are listed in the `secret.py` file.
+
+### Step 6
+
+Run `git push heroku master` to push your code base to Heroku.
+
+### Step 7
+
+Navigate to `https://APP_NAME.herokuapp.com`.
+
+### Step 8
+
+If you need to re-deploy, run the following set of commands:
+```
+git add .
+git commit -m "COMMIT MESSAGE"
+git push heroku master
+```

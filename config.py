@@ -1,12 +1,16 @@
 import os
-import settings
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
-    SECRET_KEY = settings.SECRET_KEY
+    try:
+        if os.environ['FLASK_ENV'] == "development":
+            import settings
+            SECRET_KEY = settings.SECRET_KEY
+    except:
+        SECRET_KEY = os.environ['SECRET_KEY']
 
 class ProductionConfig(Config):
     DEBUG = False
@@ -21,4 +25,3 @@ class DevelopmentConfig(Config):
 
 class TestingConfig(Config):
     TESTING = True
-

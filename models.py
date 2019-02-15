@@ -2,7 +2,6 @@ from flask import Flask
 from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from database import Base
-import settings
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import db
 
@@ -22,7 +21,7 @@ class User(db.Model):
         self.email = email
         self.password = generate_password_hash(password)
         self.generate_hash()
-        
+
     def generate_hash(self):
         self.hash = str(uuid.uuid1())
 
