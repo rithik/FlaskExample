@@ -26,7 +26,7 @@ Create the database.
 
 First, install PostgreSQL by going to [https://www.postgresql.org/download/](https://www.postgresql.org/download/). 
 
-Once PostgreSQL is installed, create a new database. 
+Once PostgreSQL is installed, create a new database. You can do this by running `psql`. This will open up a new shell to access the database. Next, create the database by running `CREATE DATABASE DATABASE_NAME;`, replacing `DATABASE_NAME` with your database name. 
 
 Change the DB_URL value in your `secret.py` file to use the following format: `postgresql://localhost/DATABASE_NAME`. 
 
@@ -72,7 +72,6 @@ Every time you modify your models, run the following two commands in the followi
 ```
 ./manage.py db migrate
 ./manage.py db upgrade
-
 ```
 
 ## Shell Access
