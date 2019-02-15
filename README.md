@@ -26,7 +26,7 @@ Create the database.
 
 First, install PostgreSQL by going to [https://www.postgresql.org/download/](https://www.postgresql.org/download/). 
 
-Once PostgreSQL is installed, create a new database. You can do this by running `psql`. This will open up a new shell to access the database. Next, create the database by running `CREATE DATABASE DATABASE_NAME;`, replacing `DATABASE_NAME` with your database name. 
+Once PostgreSQL is installed, create a new database. You can do this by running `psql`. This will open up a new shell to access the database. Next, create the database by running `CREATE DATABASE DATABASE_NAME;`, replacing `DATABASE_NAME` with your database name. Exit the shell by typing `\q`. 
 
 Change the DB_URL value in your `secret.py` file to use the following format: `postgresql://localhost/DATABASE_NAME`. 
 
