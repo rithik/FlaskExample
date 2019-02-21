@@ -12,17 +12,24 @@ from datetime import datetime
 app = Flask(__name__)
 
 try:
-    if os.environ['FLASK_ENV'] == "development":
-        import settings
-        app.config['APP_SETTINGS'] = settings.APP_SETTINGS
-        app.secret_key = settings.SECRET_KEY
-        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
-        app.config['SQLALCHEMY_DATABASE_URI'] = settings.DATABASE_URL
+    try:
+        if os.environ['FLASK_ENV'] == "development":
+            import settings
+            app.config['APP_SETTINGS'] = settings.APP_SETTINGS
+            app.secret_key = settings.SECRET_KEY
+            app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
+            app.config['SQLALCHEMY_DATABASE_URI'] = settings.DATABASE_URL
+    except:
+        app.config['APP_SETTINGS'] = os.environ['APP_SETTINGS']
+        app.secret_key = os.environ['SECRET_KEY']
+        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.environ['SQLALCHEMY_TRACK_MODIFICATIONS']
+        app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 except:
-    app.config['APP_SETTINGS'] = os.environ['APP_SETTINGS']
-    app.secret_key = os.environ['SECRET_KEY']
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.environ['SQLALCHEMY_TRACK_MODIFICATIONS']
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+    import settings
+    app.config['APP_SETTINGS'] = settings.APP_SETTINGS
+    app.secret_key = settings.SECRET_KEY
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
+    app.config['SQLALCHEMY_DATABASE_URI'] = settings.DATABASE_URL
 
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate

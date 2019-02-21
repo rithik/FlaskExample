@@ -3,11 +3,15 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import os
 try:
-    if os.environ['FLASK_ENV'] == "development":
-        import settings
-        engine = create_engine(settings.DATABASE_URL, convert_unicode=True)
+    try:
+        if os.environ['FLASK_ENV'] == "development":
+            import settings
+            engine = create_engine(settings.DATABASE_URL, convert_unicode=True)
+    except:
+        engine = create_engine(os.environ['DATABASE_URL'], convert_unicode=True)
 except:
-    engine = create_engine(os.environ['DATABASE_URL'], convert_unicode=True)
+    import settings
+    SECRET_KEY = settings.SECRET_KEY
 
 db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
 Base = declarative_base()

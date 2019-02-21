@@ -6,11 +6,15 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     try:
-        if os.environ['FLASK_ENV'] == "development":
-            import settings
-            SECRET_KEY = settings.SECRET_KEY
+        try:
+            if os.environ['FLASK_ENV'] == "development":
+                import settings
+                SECRET_KEY = settings.SECRET_KEY
+        except:
+            SECRET_KEY = os.environ['SECRET_KEY']
     except:
-        SECRET_KEY = os.environ['SECRET_KEY']
+        import settings
+        SECRET_KEY = settings.SECRET_KEY
 
 class ProductionConfig(Config):
     DEBUG = False
