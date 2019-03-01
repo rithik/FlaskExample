@@ -11,8 +11,8 @@ try:
         engine = create_engine(os.environ['DATABASE_URL'], convert_unicode=True)
 except:
     import settings
-    SECRET_KEY = settings.SECRET_KEY
-
+    engine = create_engine(settings.DATABASE_URL, convert_unicode=True)
+    
 db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
 Base = declarative_base()
 Base.query = db_session.query_property()
@@ -20,3 +20,4 @@ Base.query = db_session.query_property()
 def init_db():
     import models
     Base.metadata.create_all(bind=engine)
+    
